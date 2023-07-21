@@ -5,13 +5,12 @@ uint16_t NeoPIN =D4;
 // wir legen fest das es drei LED's im stripe gibt
 uint16_t NUM_LEDS =3;
 
-Adafruit_NeoPixel strip;
+// Wir erstellen eine Referenz auf eine Klasse namens "strip" vom Typ Adafruit_NeoPixel
+Adafruit_NeoPixel strip= Adafruit_NeoPixel(NUM_LEDS, NeoPIN, NEO_RGB + NEO_KHZ800);
 
 void setup() 
 {
   Serial.begin(115200);
-  pinMode(NeoPIN, OUTPUT);
-  strip = Adafruit_NeoPixel(NUM_LEDS, NeoPIN, NEO_RGB + NEO_KHZ800);
   strip.setBrightness(50);
   strip.begin();
 
@@ -20,10 +19,10 @@ void setup()
   {
     // wir legen fest das das alle LED#S grün ist
     strip.setPixelColor(i, strip.Color(255,0,0));
-    //wir legen fest das nun der streifen geupdatet wird
-    strip.show(); 
   }
-
+  //wir legen fest das nun der streifen geupdatet wird
+  strip.show();
+  delay(100);
 }
 
 void loop() 
@@ -36,10 +35,10 @@ void loop()
     for(int i=0;i<NUM_LEDS;i++)
     {
       // wir legen fest das das alle LED#S blau ist
-      strip.setPixelColor(i, strip.Color(0,0,255));
-      //wir legen fest das nun der streifen geupdatet wird
-      strip.show(); 
+      strip.setPixelColor(i, strip.Color(0,0,255)); 
     }
+    //wir legen fest das nun der streifen geupdatet wird
+    strip.show();
   }
-  
+  delay(100);
 }

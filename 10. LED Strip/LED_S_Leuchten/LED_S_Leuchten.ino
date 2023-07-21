@@ -11,7 +11,7 @@ uint16_t NeoPIN =D4;
 uint16_t NUM_LEDS =3;
 
 // Wir erstellen eine Referenz auf eine Klasse namens "strip" vom Typ Adafruit_NeoPixel
-Adafruit_NeoPixel strip= Adafruit_NeoPixel(NUM_LEDS, NeoPIN, NEO_RGB + NEO_KHZ800);;
+Adafruit_NeoPixel strip= Adafruit_NeoPixel(NUM_LEDS, NeoPIN, NEO_RGB + NEO_KHZ800);
 
 void setup() 
 {
